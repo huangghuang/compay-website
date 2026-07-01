@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础原料布系列 - 产品中心</title>
+    <style>
+        /* --- 基础样式重置 --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- 布局容器 --- */
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* --- 面包屑导航 --- */
+        .breadcrumb {
+            padding: 15px 0;
+            font-size: 14px;
+            color: #666;
+            border-bottom: 1px solid #e1e1e1;
+            margin-bottom: 30px;
+        }
+        .breadcrumb a:hover { color: #007bff; }
+
+        /* --- 产品详情主体 --- */
+        .product-detail {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            gap: 40px;
+        }
+
+        /* 左侧：产品图片（滑动图库） */
+        .product-gallery {
+            flex: 1;
+            min-width: 350px;
+        }
+        .gallery-slider { position: relative; }
+        .gallery-viewport { overflow: hidden; border-radius: 6px; border: 1px solid #eee; }
+        .gallery-track { display: flex; transition: transform 0.45s cubic-bezier(.22,.9,.35,1); touch-action: pan-y; }
+        .gallery-item { height: 550px; flex: 0 0 100%; display: flex; align-items: center; justify-content: center; background: #fff; }
+        .gallery-item img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .g-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5; }
+        .g-btn.left { left: 8px; }
+        .g-btn.right { right: 8px; }
+        .g-btn:active { transform: translateY(-50%) scale(.98); }
+        .g-dots { text-align: center; margin-top: 12px; }
+        .g-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #d8dbe0; margin: 0 6px; cursor: pointer; }
+        .g-dot.active { background: #007bff; }
+
+        /* 右侧：产品信息 */
+        .product-info {
+            flex: 1;
+            min-width: 350px;
+        }
+        .product-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .product-desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        /* 参数表格 */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .specs-table th, .specs-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .specs-table th {
+            width: 30%;
+            font-weight: 600;
+            color: #555;
+            background-color: #fcfcfc;
+        }
+        .specs-table td {
+            color: #333;
+        }
+
+        /* 行动按钮 */
+        .action-btns {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: #666;
+            border: 2px solid #ddd;
+        }
+        .btn-outline:hover {
+            border-color: #999;
+            color: #333;
+        }
+
+        /* --- 底部详情描述 --- */
+        .detail-section {
+            margin-top: 40px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            font-size: 22px;
+            border-left: 5px solid #007bff;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+        .detail-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .detail-text {
+            flex: 1;
+        }
+       .detail-image {
+            flex: 1;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+        .detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 图片居中 */
+            object-position: center;
+        }
+
+        /* --- 底部导航 --- */
+        .page-footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #e1e1e1;
+        }
+        .back-link {
+            color: #666;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .back-link::before {
+            content: "←";
+            margin-right: 8px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .product-detail { flex-direction: column; padding: 20px; }
+            .detail-content { flex-direction: column; }
+            .product-gallery, .product-info { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 1. 面包屑导航 -->
+        <div class="breadcrumb">
+            <a href="../../index.html">首页 &gt;</a>
+            <a href="../../product itms.html">产品中心 &gt;</a>
+            <a href="../../product itms.html#idcleaning">基础原料布系列 &gt;</a>
+            <span>彩色水刺无纺布</span>
+        </div>
+
+        <!-- 2. 产品核心信息区 -->
+        <div class="product-detail">
+            <!-- 左侧图片 -->
+            <div class="product-gallery">
+                <div class="gallery-slider" id="gallerySlider">
+                    <button class="g-btn left" id="gPrev" aria-label="上一张">‹</button>
+                    <div class="gallery-viewport">
+                        <div class="gallery-track" id="galleryTrack">
+                            <div class="gallery-item"><img src="../../asset/base fabric/Printed Spunlaced Fabric/bolangcaise.jpg" alt="四色抹布盒装"></div>
+                            <div class="gallery-item"><img src="../../asset/base fabric/Printed Spunlaced Fabric/caise.jpg" alt="粉色袋装抹布"></div>
+                        </div>
+                    </div>
+                    <button class="g-btn right" id="gNext" aria-label="下一张">›</button>
+                </div>
+                <div class="g-dots" id="gDots" aria-hidden="false"></div>
+            </div>
+
+            <!-- 右侧信息 -->
+            <div class="product-info">
+                <h1 class="product-title">彩色水刺无纺布</h1>
+                <p class="product-desc">
+                    高压水刺缠结纤维后，做染色/压花的无纺布，无化学粘合剂 
+                </p >
+
+                <!-- 参数表格 -->
+                <table class="specs-table">
+                    <tr>
+                        <th>产品名称</th>
+                        <td>彩色水刺无纺布</td>
+                    </tr>
+                    <tr>
+                        <th>产品工艺</th>
+                        <td> 水刺加固→烘干→染色（滚筒/圆网）→定型；色牢度≥3级</td>
+                    </tr>
+                    <tr>
+                        <th>主要材质</th>
+                        <td>粘胶+涤纶混纺；可加竹纤维/棉/ES纤维</td>
+                    </tr>
+                    <tr>
+                        <th>产品幅宽</th>
+                        <td>10cm—220cm 大卷材可分切</td>
+                    </tr>
+                    <tr>
+                        <th>克重</th>
+                        <td>38g/㎡—120g/㎡ </td>
+                    </tr>
+                    <tr>
+                        <th>颜色分类</th>
+                       <td>红/黄/蓝/绿/白/肤色（分色防交叉污染）</td>
+                    </tr>
+                    <tr>
+                        <th>适用</th>
+                        <td>一次性毛巾/浴巾、洗脸巾、床品、厨房清洁布、美容巾</td>
+                    </tr>
+                    <tr>
+                        <th>后加工方式</th>
+                        <td>可复卷、分切、压花、定制花色图案</td>
+                    </tr>
+                </table>
+
+                <!-- 按钮组 -->
+                <!-- <div class="action-btns">
+                    立即询价
+                    查看系列
+                </div> -->
+            </div>
+        </div>
+
+        <!-- 3. 详细图文介绍 -->
+        <div class="detail-section">
+            <h2 class="section-title">产品优势</h2>
+            <div class="detail-content">
+                <div class="detail-image">
+                    <!-- 提示：替换为细节图 -->
+                    <img src="../../asset/base fabric/Printed Spunlaced Fabric/bolangcaise.jpg" alt="吸水性能">
+                </div>
+                <div class="detail-text">
+                    <h3>色彩饱满不掉色</h3>
+                    <p>采用高密度珊瑚绒编织技术，吸水量可达自身重量的7倍。无论是厨房油污还是浴室水渍，一抹即干，告别湿漉漉的台面。</p >
+                    <br>
+                    <h3>吸水强韧性佳，干湿两用</h3>
+                    <p>纤维直径仅为头发丝的1/200，能够深入微小缝隙吸附灰尘，且不会刮伤玻璃、陶瓷或不锈钢表面，不留水痕和毛絮。</p >
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="detail-section">
+            <h2 class="section-title">耐用易清洗</h2>
+            <div class="detail-content">
+                <div class="detail-text">
+                    <h3>反复水洗，依然如新</h3>
+                    <p>经过特殊固色和加固处理，支持机洗和手洗超过300次。不易发霉、不易滋生细菌，长期使用成本低廉，是家庭主妇的得力助手。</p >
+                </div>
+                <div class="detail-image">
+                  提示：替换为耐用性展示图 -->
+                    <!-- <img src="https://via.placeholder.com/500x350?text=耐用性+展示图" alt="耐用性">
+                </div>
+            </div>
+        </div> --> 
+
+        <!-- 4. 底部返回 -->
+        <div class="page-footer">
+            <a href="../../product itms.html">返回产品中心</a>
+        </div>
+    </div>
+
+        <script>
+            (function(){
+                const track = document.getElementById('galleryTrack');
+                const items = Array.from(track.children);
+                const prev = document.getElementById('gPrev');
+                const next = document.getElementById('gNext');
+                const dotsWrap = document.getElementById('gDots');
+                let index = 0;
+                let isPointerDown = false;
+                let startX = 0;
+                let currentTranslate = 0;
+
+                function createDots(){
+                    if(!dotsWrap) return;
+                    dotsWrap.innerHTML = '';
+                    items.forEach((_, i)=>{
+                        const d = document.createElement('span');
+                        d.className = 'g-dot' + (i===index? ' active':'' );
+                        d.addEventListener('click', ()=>{ index = i; update(); });
+                        dotsWrap.appendChild(d);
+                    });
+                }
+
+                function update(){
+                    const pct = -index * 100;
+                    track.style.transition = 'transform 0.45s cubic-bezier(.22,.9,.35,1)';
+                    track.style.transform = `translateX(${pct}%)`;
+                    Array.from(dotsWrap.children || []).forEach((d,i)=> d.classList.toggle('active', i===index));
+                }
+
+                prev.addEventListener('click', ()=>{ index = Math.max(0, index-1); update(); });
+                next.addEventListener('click', ()=>{ index = Math.min(items.length-1, index+1); update(); });
+
+                // pointer events (works for mouse and touch)
+                const slider = document.getElementById('gallerySlider');
+                slider.addEventListener('pointerdown', (e)=>{
+                    if (e.target.closest('button')) return;
+                    isPointerDown = true;
+                    startX = e.clientX;
+                    track.style.transition = 'none';
+                    // no pointer capture on button clicks
+                });
+                slider.addEventListener('pointermove', (e)=>{
+                    if(!isPointerDown) return;
+                    const dx = e.clientX - startX;
+                    const movePct = dx / slider.clientWidth * 100;
+                    track.style.transform = `translateX(${ -index*100 + movePct }%)`;
+                });
+                slider.addEventListener('pointerup', (e)=>{
+                    if(!isPointerDown) return;
+                    isPointerDown = false;
+                    const dx = e.clientX - startX;
+                    const threshold = slider.clientWidth * 0.12; // 12% threshold
+                    if (dx > threshold) {
+                        index = Math.max(0, index-1);
+                    } else if (dx < -threshold) {
+                        index = Math.min(items.length-1, index+1);
+                    }
+                    update();
+                });
+                slider.addEventListener('pointerleave', ()=>{
+                    if (!isPointerDown) return;
+                    isPointerDown = false;
+                    update();
+                });
+                slider.addEventListener('pointercancel', ()=>{ isPointerDown = false; update(); });
+
+                // keyboard support
+                document.addEventListener('keydown', (e)=>{
+                    if (e.key === 'ArrowLeft') { index = Math.max(0, index-1); update(); }
+                    if (e.key === 'ArrowRight') { index = Math.min(items.length-1, index+1); update(); }
+                });
+
+                createDots();
+                update();
+            })();
+        </script>
+
+    </body>
+    </html>

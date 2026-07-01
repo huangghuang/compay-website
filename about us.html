@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 山东锦腾弘达水刺无纺布有限责任公司</title>
+    <style>
+        /* --- 基础样式与粘性页脚布局 --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { height: 100%; }
+        body { 
+            font-family: "Microsoft YaHei", Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f9f9f9; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        
+        /* 导航栏与页脚 */
+        header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .container { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+        .logo { font-size: 24px; font-weight: 700; letter-spacing: 1px; color: #0f4d95; }
+        nav { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; color: #556077; }
+        nav a { position: relative; transition: color .25s ease; }
+        nav a::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 0; height: 2px; background: #0f4d95; transition: width .3s ease; }
+        nav a:hover { color: #0f4d95; }
+        nav a:hover::after { width: 100%; }
+        
+        header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 24px; font-weight: bold; color: #0056b3; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #0056b3; }
+        footer { background-color: #222; color: #aaa; text-align: center; padding: 20px 0; font-size: 14px; }
+        .main-content { flex: 1; padding: 40px 0; }
+        
+        .hero { padding:80px 0; background: linear-gradient(180deg, rgba(3,25,63,0.58), rgba(3,25,63,0.20)), url('asset/equipment/Plant\ 2.jpg') center/cover no-repeat; color:#fff; text-align:center }
+        .hero h1 { font-size:clamp(2rem,4vw,3rem); margin-bottom:12px }
+        .hero p { max-width:900px; margin:0 auto; color:rgba(255,255,255,0.9) }
+
+       /* 品牌介绍模块 */
+        .brand-intro {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .brand-intro-left h2 {
+            font-size: 36px;
+            color: #003366;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .brand-intro-left p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .brand-intro-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .brand-img {
+            width: 100%;
+            height: 220px;
+            background-color: #e9ecef;
+        }
+        .brand-text p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* 企业实力模块 */
+        .company-section {
+            padding: 40px 0;
+        }
+        .company-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .company-row:nth-child(even) {
+            direction: rtl; /* 实现左右交替 */
+        }
+        .company-row:nth-child(even) > * {
+            direction: ltr;
+        }
+        .company-text h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        .company-text p {
+            font-size: 15px;
+            color: #666;
+        }
+        .company-img {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+        }
+
+        /* 数据亮点模块 */
+        .data-section {
+            background: linear-gradient(180deg, rgba(3,25,63,0.58), rgba(3,25,63,0.20)), url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 60px 0;
+            color: #fff;
+            margin: 40px 0;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .data-item .num {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .data-item .desc {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* 资质证书模块 */
+        .cert-section {
+            padding: 60px 0;
+        }
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .cert-header h3 {
+            font-size: 24px;
+            color: #333;
+        }
+        .cert-controls {
+            display: flex;
+            gap: 10px;
+        }
+        .cert-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .cert-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        .cert-card {
+            flex-shrink: 0;
+            width: 220px;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+
+         /* 厂房设备 */
+        .equipment-section {
+            padding: 50px 0;
+            background-color: #fff;
+        }
+        .equipment-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            /* 隐藏滚动条 */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .equipment-slider::-webkit-scrollbar { display: none; }
+
+        .equip-card {
+            flex: 0 0 calc((100% - 80px) / 5); /* 5 items per view, 4 gaps of 20px -> 80px */
+            scroll-snap-align: start;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .equip-card:hover { transform: scale(1.02); }
+        .equip-img {
+            height: 180px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        .equip-info {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+        .equip-info h4 { color: #010e1b; font-size: 13px; }
+
+        /* 可拖拽的提示（赋予光标） */
+        .equipment-slider.dragging { cursor: grabbing; cursor: -webkit-grabbing; }
+
+        .footer { background: #071a33; color: #cbd6e5; padding: 60px 0 40px; }
+        .footer-inner { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 32px; width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+        .footer h4 { color: #fff; margin-bottom: 18px; font-size: 1rem; }
+        .footer a { color: #b7c9df; display: block; margin-bottom: 10px; transition: color .2s ease; }
+        .footer a:hover { color: #fff; }
+        .footer p { color: #9fb2cd; line-height: 1.8; }
+        .copyright { text-align: center; color: #7a8dab; margin-top: 40px; font-size: .92rem; }
+
+        
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .brand-intro, .company-row {
+                grid-template-columns: 1fr;
+            }
+            .company-row:nth-child(even) {
+                direction: ltr;
+            }
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-banner h1 {
+                font-size: 24px;
+            }
+            .brand-intro-left h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .equipment-grid { grid-template-columns: repeat(2, 1fr); } /* 平板显示2列 */
+        }
+        @media (max-width: 768px) {
+            .about-hero .container { flex-direction: column; text-align: center; }
+            .about-text h3 { border: none; padding: 0; }
+            .nav-links { display: none; }
+            .equipment-grid { grid-template-columns: 1fr; } /* 手机显示1列 */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+         <div class="container header-inner">
+            <div class="logo">山东锦腾弘达水刺无纺布</div>
+            <nav>
+                <a href="index.html" target="_blank" data-i18n="nav.home">首页</a>
+                <a href="about us.html" data-i18n="nav.about">关于我们</a>
+                <a href="product itms.html" data-i18n="nav.products">产品中心</a>
+                <a href="company news.html" data-i18n="nav.news">新闻媒体</a>
+                <a href="contact us.html" data-i18n="nav.contact">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+            <div class="container">
+                <h1>关于锦腾弘达</h1>
+                <p>专注高端差异化水刺非织造材料，服务美容护理、民用清洁、工业用材与医用材料四大领域。我们坚持绿色制造、技术创新与高品质交付。</p>
+            </div>
+    </section>
+
+    <div class="container">
+    <!-- 品牌介绍模块 -->
+    <section class="brand-intro">
+        <div class="brand-intro-left">
+            <h2>关于我们</h2>
+            <p>山东锦腾弘达水刺无纺布有限责任公司是一家以水刺无纺布及无纺布制品为主的大型生产型企业；公司隶属于山东锦腾弘达集团坐落于“三国五邑之地，文化昌明之邦”的山东省滕州市，地理位置优越，环境优美，交通便利。</p >
+        </div>
+        <div class="brand-intro-right">
+            <div class="brand-img" style="background-image: url(asset/equipment/Plant.jpg);background-position: center;background-size: cover;"></div>
+            <div class="brand-text">
+                <p>公司现已投资5.5亿元人民币，其中固定资产4.3亿元，流动资金1.2亿元；公司占地100余亩，总建筑面积约8万平方米，拥有世界领先技术的水刺无纺布生产线5条，主要设备从德国进口，技术力量及产品品质在国内外均处于领先水平。公司拥有完善的生产管理与质量控制体系，所有产品均符合21世纪环保要求，100％可降解；生产的产品克重范围在40g/m2-120g/m2，公司的主营产品有：CT系列工业基布、BR系列卫生用品资材、CRWP系列医疗资材等。</p >
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业实力模块 -->
+    <section class="company-section">
+        <div class="company-row">
+            <div class="company-text">
+                <h3>生产管理体系</h3>
+                <p>  我司以高标准无尘车间与智能管控双驱动，打造洁净环境+可靠流程+量化结果的全链路闭环，确保产品品质稳定可靠，精准匹配客户需求。</p >
+            </div>
+            <div class="company-img" style="background-image: url(1111.jpg);background-position: center;background-size: cover;"></div>
+        </div>
+        <!-- <div class="company-row">
+            <div class="company-text">
+                <p>Backed by a skilled professional team and our integrated "R&D-Production-Testing" technical strengths, our products are exported to over 30 countries and regions across Europe, North America, Australia, and beyond. Moving forward, we will continue to innovate, update our missions of "Greener Buildings, Healthier Living" and collaborate with global partners to build a sustainable future.</p >
+            </div>
+            <div class="company-img">[团队协作图]</div>
+        </div> -->
+    </section>
+</div>
+
+    <!-- 数据亮点模块 -->
+    <section class="data-section">
+        <div class="container">
+            <div class="data-grid">
+                <div class="data-item">
+                    <div class="num">20+</div>
+                    <div class="desc">20多年无纺布生产厂家</div>
+                </div>
+                <div class="data-item">
+                    <div class="num">86000+</div>
+                    <div class="desc">工厂占地面积86000平方米</div>
+                </div>
+                <div class="data-item">
+                    <div class="num">1000+</div>
+                    <div class="desc">现货样板</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 资质证书模块 -->
+        <section class="cert-section">
+            <div class="cert-header">
+                <h3>质量管理体系</h3>
+                <div class="cert-controls">
+                    <span class="cert-btn">&lt;</span>
+                    <span class="cert-btn">&gt;</span>
+                </div>
+            </div>
+            <div class="cert-slider">
+                <div class="cert-card" style="background-image: url(asset/certification/fsc.jpg);background-position: center;background-size: cover;"></div>
+                <div class="cert-card" style="background-image: url(asset/certification/HACCP.jpg);background-position: center;background-size: cover;"></div>
+                <div class="cert-card" style="background-image: url(asset/certification/Biodegradable\ TUV.jpg);background-position: center;background-size: cover;"></div>
+                <div class="cert-card" style="background-image: url(asset/certification/OEKO-TEX\ STANDARD\ 100.jpg);background-position: center;background-size: cover;"></div>
+                <div class="cert-card" style="background-image: url(asset/certification/ISO\ EN.jpg);background-position: center;background-size: cover;"></div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- 厂房设备 -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="text-align: center; margin-bottom: 10px;">厂房设备</h2>
+                <p style="text-align: center; margin-bottom: 15px;">专注于水刺无纺布研发、生产和销售为一体的新兴企业</p >
+            </div>
+            
+            <div class="equipment-slider">
+                <!-- 设备 1 -->
+                <div class="equip-card">
+                    <div class="equip-img" style="background-image: url('asset/equipment/Cleanroom.jpg');"></div>
+                    <div class="equip-info">
+                        <h4>验布机</h4>
+                    </div>
+                </div>
+                <!-- 设备 2 -->
+                <div class="equip-card">
+                    <div class="equip-img" style="background-image: url('asset/equipment/Air\ Shower.jpg');"></div>
+                    <div class="equip-info">
+                        <h4>风淋室</h4>
+                    </div>
+                </div>
+                <!-- 设备 3 -->
+                <div class="equip-card">
+                    <div class="equip-img" style="background-image: url('asset/equipment/Cleanroom5.jpg');"></div>
+                    <div class="equip-info">
+                        <h4>无尘车间</h4>
+                    </div>
+                </div>
+                <!-- 设备 4 -->
+                <div class="equip-card">
+                    <div class="equip-img" style="background-image: url('asset/equipment/Equipment\ 1.jpg');"></div>
+                    <div class="equip-info">
+                        <h4>水刺生产线 A 线</h4>
+                    </div>
+                </div>
+                <!-- 设备 5 -->
+                <div class="equip-card">
+                    <div class="equip-img" style="background-image: url('asset/equipment/Equipment\ 2.jpg');"></div>
+                    <div class="equip-info">
+                        <h4>水刺生产线 B 线</h4>
+                    </div>
+                </div>
+                 <!-- 设备 6 -->
+                <div class="equip-card">
+                    <div class="equip-img" style="background-image: url('asset/equipment/Dressing\ Room\ .jpg');"></div>
+                    <div class="equip-info">
+                        <h4>拉力测试仪器</h4>
+                    </div>
+                </div>
+                 <!-- 设备 7 -->
+                <div class="equip-card">
+                    <div class="equip-img" style="background-image: url('asset/equipment/Finished\ Goods\ Warehouse.jpg');"></div>
+                    <div class="equip-info">
+                        <h4>成品仓库</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer id="contact" class="footer">
+        <div class="container footer-inner">
+            <div>
+                <h4>山东锦腾弘达水刺无纺布</h4>
+                <p>专注高端差异化水刺非织造材料，服务美容护理、民用清洁、工业用材与医用材料四大领域。</p>
+            </div>
+            <div>
+                <h4>快速导航</h4>
+                <a href="#about">关于我们</a>
+                <a href="#products">产品中心</a>
+                <a href="#overview">业务概况</a>
+                <a href="#news">新闻媒体</a>
+                <a href="#advantages">技术创新</a>
+                <a href="#contact">联系我们</a>
+            </div>
+            <div>
+                <h4>联系我们</h4>
+                <a href="tel:+861234567890">📞电话: +86 186 6325 1519</a>
+                <a href="mailto:info@nbond.cn">📫邮箱: info@nbond.cn</a>
+                <a href="#">🏠地址: 山东省滕州市经济开发区恒源北路599号</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 山东锦腾弘达水刺无纺布有限公司 版权所有 | 鲁ICP备10204678号-2</div>
+    </footer>
+    
+    <script src="js/yuyan.js"></script>
+    <script>
+        (function(){
+            const slider = document.querySelector('.equipment-slider');
+            if (!slider) return;
+
+            // 鼠标拖拽滑动
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('dragging');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('dragging');
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('dragging');
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1; // 滚动速度系数
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // 触摸滑动支持（移动设备）
+            let touchStartX = 0;
+            let touchScrollLeft = 0;
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].pageX - slider.offsetLeft;
+                touchScrollLeft = slider.scrollLeft;
+            }, {passive:true});
+            slider.addEventListener('touchmove', (e) => {
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - touchStartX);
+                slider.scrollLeft = touchScrollLeft - walk;
+            }, {passive:true});
+
+            // 如果窗口宽度足够，确保5个同时可见：当容器变窄时会自动换行为横向滚动
+            function adjustForViewport(){
+                // 已通过 CSS 计算宽度显示 5 个；此处可在必要时添加额外逻辑
+            }
+            window.addEventListener('resize', adjustForViewport);
+        })();
+    </script>
+</body>
+</html>

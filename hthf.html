@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端适配关键 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Journey Banner</title>
+    <!-- 引入Swiper官方CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 全屏轮播容器 占满屏幕可视高度 */
+        .hero-slider {
+            width: 100%;
+            height: 100vh;
+        }
+        .swiper-slide {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        /* 背景图铺满全屏 */
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 替换成你的宇航员图片地址 */
+            background: url("https://p3-flow-image-sign.byteimg.com/tos-cn-i-a9rns2rl98/0404f140239c413890d7d013411d3351~tplv-a9rns2rl98-image.image") center / cover no-repeat;
+        }
+        /* 深色遮罩，提升白色文字清晰度 */
+        .slide-mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            top: 0;
+            left: 0;
+        }
+        /* 文字内容区域 左侧垂直居中 */
+        .slide-text-wrap {
+            position: absolute;
+            z-index: 2;
+            left: 12%;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffffff;
+        }
+        .slide-subtitle {
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .slide-title {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: 36px;
+        }
+        /* LEARN MORE 紫色按钮 */
+        .slide-btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background-color: #8046d2;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .slide-btn:hover {
+            background-color: #6b38b8;
+        }
+        /* 自定义左右切换箭头 圆形紫色样式 */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(128, 70, 210, 0.65);
+            color: #fff;
+        }
+        /* 清除箭头默认边框 */
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 18px;
+        }
+        /* 移动端文字缩小适配 */
+        @media (max-width: 768px) {
+            .slide-text-wrap {
+                left: 6%;
+                right: 6%;
+            }
+            .slide-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 轮播主体结构 -->
+    <div class="hero-slider swiper">
+        <div class="swiper-wrapper">
+            <!-- 第一屏：宇航员主图（你截图画面） -->
+            <div class="swiper-slide">
+                <div class="slide-bg"></div>
+                <div class="slide-mask"></div>
+                <div class="slide-text-wrap">
+                    <p class="slide-subtitle">WELCOME TO SPACE JOURNEY</p >
+                    <h1 class="slide-title">Bringing the Universe<br>Closer To You</h1>
+                    LEARN MORE
+                </div>
+            </div>
+            <!-- 第二屏 可自行添加另一张轮播图 -->
+            <div class="swiper-slide">
+                <div class="slide-bg" style="background-image: url(第二张图片地址);"></div>
+                <div class="slide-mask"></div>
+                <div class="slide-text-wrap">
+                    <p class="slide-subtitle">EXPLORE GALAXY</p >
+                    <h1 class="slide-title">Discover Infinite<br>Space Wonders</h1>
+                    LEARN MORE
+                </div>
+            </div>
+        </div>
+        <!-- 左右切换箭头 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Swiper初始化JS -->
+    <script>
+        const heroSwiper = new Swiper('.hero-slider', {
+            // 开启左右导航箭头
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true, // 无限循环轮播
+            autoplay: {
+                delay: 6000, // 6秒自动切换
+                disableOnInteraction: false, // 点击箭头后继续自动播放
+            },
+            speed: 900, // 切换动画时长
+        });
+    </script>
+</body>
+</html>

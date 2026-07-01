@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 山东锦腾弘达水刺无纺布有限责任公司</title>
+    <style>
+        /* --- 基础样式与粘性页脚布局 --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { height: 100%; }
+        body { 
+            font-family: "Microsoft YaHei", Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f9f9f9; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        
+        /* 导航栏与页脚 */
+        header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .container { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+        .logo { font-size: 24px; font-weight: 700; letter-spacing: 1px; color: #0f4d95; }
+        nav { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; color: #556077; }
+        nav a { position: relative; transition: color .25s ease; }
+        nav a::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 0; height: 2px; background: #0f4d95; transition: width .3s ease; }
+        nav a:hover { color: #0f4d95; }
+        nav a:hover::after { width: 100%; }
+        
+        header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 24px; font-weight: bold; color: #0056b3; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #0056b3; }
+        footer { background-color: #222; color: #aaa; text-align: center; padding: 20px 0; font-size: 14px; }
+        .main-content { flex: 1; padding: 40px 0; }
+
+        /* --- 联系我们页面专属样式 --- */
+        .section-title { text-align: center; font-size: 32px; margin-bottom: 40px; color: #0056b3; font-weight: bold; }
+        .contact-wrapper { display: flex; gap: 40px; flex-wrap: wrap; }
+        
+        /* 左侧联系信息 */
+        .contact-info { flex: 1; min-width: 300px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .contact-info h3 { margin-bottom: 25px; color: #333; border-left: 5px solid #0056b3; padding-left: 15px; }
+        .info-item { margin-bottom: 25px; display: flex; align-items: flex-start; }
+        .info-icon { font-size: 24px; margin-right: 15px; color: #0056b3; min-width: 30px; }
+        .info-text h4 { margin-bottom: 5px; font-size: 16px; }
+        .info-text p { color: #666; font-size: 15px; }
+        
+        /* 地图占位 */
+        .map-box { margin-top: 30px; height: 350px; background-color: #e3f2fd; border-radius: 8px; overflow: hidden; }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
+
+        /* 右侧留言表单 */
+        .contact-form { flex: 1.5; min-width: 300px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .contact-form h3 { margin-bottom: 25px; color: #333; border-left: 5px solid #0056b3; padding-left: 15px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; font-family: inherit; }
+        .form-control:focus { border-color: #0056b3; outline: none; }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+        .submit-btn { background-color: #0056b3; color: #fff; border: none; padding: 12px 30px; font-size: 16px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background-color: #004494; }
+
+        .footer { background: #071a33; color: #cbd6e5; padding: 60px 0 40px; }
+        .footer-inner { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 32px; width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+        .footer h4 { color: #fff; margin-bottom: 18px; font-size: 1rem; }
+        .footer a { color: #b7c9df; display: block; margin-bottom: 10px; transition: color .2s ease; }
+        .footer a:hover { color: #fff; }
+        .footer p { color: #9fb2cd; line-height: 1.8; }
+        .copyright { text-align: center; color: #7a8dab; margin-top: 40px; font-size: .92rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .contact-wrapper { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+         <div class="container header-inner">
+            <div class="logo">山东锦腾弘达水刺无纺布</div>
+            <nav>
+                <a href="index.html" target="_blank" data-i18n="nav.home">首页</a>
+                <a href="about us.html" data-i18n="nav.about">关于我们</a>
+                <a href="product itms.html" data-i18n="nav.products">产品中心</a>
+                <a href="company news.html" data-i18n="nav.news">新闻媒体</a>
+                <a href="contact us.html" data-i18n="nav.contact">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+
+            <div class="contact-wrapper">
+                <!-- 左侧：联系信息 -->
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>工厂地址</h4>
+                            <p>山东省枣庄市滕州市经济开发区恒源北路599号山东锦腾弘达集团</p >
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>销售热线</h4>
+                            <p>186-6325-1519 (张经理)</p >
+                            <p>0632-xxxxxxx (座机)</p >
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-text">
+                            <h4>电子邮箱</h4>
+                            <p>sales@xx-nonwoven.com</p >
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <h4>工作时间</h4>
+                            <p>周一至周六：8:00 - 18:00</p >
+                        </div>
+                    </div>
+
+                    <!-- 地图嵌入位置 -->
+                    <div class="map-box">
+                        <iframe src="https://uri.amap.com/search?query=%E5%B1%B1%E4%B8%9C%E7%9C%A5%E5%BA%84%E5%B8%82%E6%BB%95%E5%B7%9E%E5%B8%82%E7%BB%8F%E6%B5%8E%E5%BC%80%E5%8F%91%E5%8C%BA%E6%81%92%E6%BA%90%E5%8C%97%E8%B7%AF599%E5%8F%B7" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- 右侧：在线留言 -->
+                <div class="contact-form">
+                    <h3>在线留言</h3>
+                    <form action="mail.php" method="post">
+                        <div class="form-group">
+                            <label>您的姓名 *</label>
+                            <input type="text" name="username" class="form-control" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label>联系电话 *</label>
+                            <input type="tel" name="phone" class="form-control" placeholder="请输入您的手机号码" required>
+                        </div>
+                        <div class="form-group">
+                            <label>您的需求</label>
+                            <textarea name="content" class="form-control" placeholder="请简单描述您需要的产品克重、幅宽或用途..."></textarea>
+                        </div>
+                        <input type="hidden" name="gender" value="先生">
+                        <input type="hidden" name="company" value="">
+                        <div class="form-group">
+                            <label>验证码 *</label>
+                            <div style="display:flex;gap:10px;align-items:center;">
+                                <input type="text" name="code" class="form-control" placeholder="请输入验证码" required maxlength="4" style="flex:1;max-width:180px;">
+                                <img src="code.php" alt="验证码" onclick="this.src='code.php?'+Math.random()" style="height:44px;cursor:pointer;border:1px solid #ddd;border-radius:5px;">
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">提交留言</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+     <footer id="contact" class="footer">
+        <div class="container footer-inner">
+            <div>
+                <h4>山东锦腾弘达水刺无纺布</h4>
+                <p>专注高端差异化水刺非织造材料，服务美容护理、民用清洁、工业用材与医用材料四大领域。</p>
+            </div>
+            <div>
+                <h4>快速导航</h4>
+                <a href="#about">关于我们</a>
+                <a href="#products">产品中心</a>
+                <a href="#overview">业务概况</a>
+                <a href="#news">新闻媒体</a>
+                <a href="#advantages">技术创新</a>
+                <a href="#contact">联系我们</a>
+            </div>
+            <div>
+                <h4>联系我们</h4>
+                <a href="tel:+861234567890">📞电话: +86 186 6325 1519</a>
+                <a href="mailto:info@nbond.cn">📫邮箱: info@nbond.cn</a>
+                <a href="#">🏠地址: 山东省滕州市经济开发区恒源北路599号</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 山东锦腾弘达水刺无纺布有限公司 版权所有 | 鲁ICP备10204678号-2</div>
+    </footer>
+    <script src="js/yuyan.js"></script>
+
+</body>
+</html>
