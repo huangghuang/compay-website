@@ -99,8 +99,36 @@
         .swiper-button-next::after,
         .swiper-button-prev::after { font-size: 18px; }
         @media (max-width: 768px) {
-            .slide-text-wrap { left: 6%; right: 6%; }
-            .slide-title { font-size: 2rem; }
+            .hero-slider { height: 72vh; min-height: 420px; }
+            .slide-text-wrap {
+                width: calc(100% - 24px);
+                padding: 0 18px;
+                left: 50%;
+                right: auto;
+                transform: translate(-50%, -50%);
+            }
+            .slide-subtitle { font-size: 16px; margin-bottom: 10px; }
+            .slide-title { font-size: clamp(1.7rem, 6vw, 2.4rem); line-height: 1.25; }
+            .slide-desc { font-size: .95rem; margin-bottom: 18px; }
+            .slide-btn { padding: 12px 24px; font-size: 14px; }
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+            .swiper-button-next::after,
+            .swiper-button-prev::after { font-size: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-slider { height: 60vh; min-height: 340px; }
+            .slide-text-wrap { width: calc(100% - 20px); padding: 0 12px; }
+            .slide-subtitle { font-size: 14px; margin-bottom: 8px; }
+            .slide-title { font-size: clamp(1.4rem, 7vw, 1.9rem); }
+            .slide-desc { display: none; }
+            .slide-btn { padding: 10px 18px; font-size: 13px; }
+            .swiper-button-next,
+            .swiper-button-prev { display: none; }
         }
 
 
@@ -236,6 +264,7 @@
             overflow-x: auto;
             padding-bottom: 20px;
             scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
             /* 隐藏滚动条 */
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -263,6 +292,22 @@
             text-align: center;
         }
         .equip-info h4 { color: #010e1b; font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .equipment-slider { gap: 12px; padding-bottom: 12px; }
+            .equip-card { flex: 0 0 min(78vw, 280px); }
+            .equip-img { height: 150px; }
+            .equip-info { padding: 16px 12px; }
+            .equip-info h4 { font-size: 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .equipment-slider { gap: 10px; }
+            .equip-card { flex: 0 0 84vw; }
+            .equip-img { height: 132px; }
+            .equip-info { padding: 14px 10px; }
+            .equip-info h4 { font-size: 13px; }
+        }
 
         /* 可拖拽的提示（赋予光标） */
         .equipment-slider.dragging { cursor: grabbing; cursor: -webkit-grabbing; }
