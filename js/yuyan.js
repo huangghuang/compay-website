@@ -314,11 +314,20 @@
                 '📞电话: +86 186 6325 1519': '📞Phone: +86 186 6325 1519',
                 '📫邮箱: info@nbond.cn': '📫Email: info@nbond.cn',
                 '🏠地址: 山东省滕州市经济开发区恒源北路599号': '🏠Address: No. 599 Hengyuan North Road, Economic Development Zone, Tengzhou City, Shandong Province',
-                
-
-
-
-
+                '锦腾弘达集团在第十届环保材料博览会上展示最新工艺': 'Jinteng Hongda Group showcases the latest technology at the 10th Environmental Protection Materials Expo',
+                '公司展示了以天然纤维为核心的新型水刺工艺，现场演示了可降解产品的制造流程，与多家品牌达成初步合作意向。': 'The company showcased a new spunlace process centered on natural fibers, demonstrating the manufacturing process of biodegradable products on-site and reaching preliminary cooperation intentions with several brands.',
+                '新闻来源：公司公告': 'News Source: Company Announcement',
+                '锦腾弘达通过多项国际质量认证，产品出口能力提升': 'Jinteng Hongda has obtained multiple international quality certifications, enhancing its product export capabilities.',
+                '近期公司多项产品通过国际质量体系认证，提高了在欧洲与东南亚市场的竞争力与准入能力。': 'Recently, several of the company’s products have passed international quality system certifications, enhancing competitiveness and market access in Europe and Southeast Asia.',
+                '新闻来源：行业媒体': 'News Source: Industry Media',
+                '知名品牌签署长期供货协议': 'Well-known brands sign long-term supply agreements',
+                '6天前': '6 days ago',
+                '新品发布：植物基湿巾系列': 'New Product Launch: Plant-based Wet Wipes Series',
+                '12天前': '12 days ago',
+                '参加行业高峰论坛并发表主题演讲': 'Participated in the industry summit forum and delivered a keynote speech',
+                '1个月前': '1 month ago',
+                '投资者互动日：电话会议回顾': 'Investor Interaction Day: Conference Call Review',
+                '2个月前': '2 months ago',
 
                 
             }
