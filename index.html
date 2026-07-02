@@ -54,6 +54,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background: #f3f6fb;
         }
         .slide-bg {
             position: absolute;
@@ -61,7 +62,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('1.jpg') center / cover no-repeat;
+            background: url('1.jpg') center / contain no-repeat;
+            background-color: #f3f6fb;
         }
         .slide-mask {
             position: absolute;
@@ -100,6 +102,11 @@
         .swiper-button-prev::after { font-size: 18px; }
         @media (max-width: 768px) {
             .hero-slider { height: 72vh; min-height: 420px; }
+            .slide-bg {
+                background-size: contain;
+                background-position: center center;
+                background-color: #f3f6fb;
+            }
             .slide-text-wrap {
                 width: calc(100% - 24px);
                 padding: 0 18px;
@@ -122,6 +129,10 @@
 
         @media (max-width: 480px) {
             .hero-slider { height: 60vh; min-height: 340px; }
+            .slide-bg {
+                background-size: contain;
+                background-position: center center;
+            }
             .slide-text-wrap { width: calc(100% - 20px); padding: 0 12px; }
             .slide-subtitle { font-size: 14px; margin-bottom: 8px; }
             .slide-title { font-size: clamp(1.4rem, 7vw, 1.9rem); }
@@ -799,7 +810,7 @@
                     </div>
                     <!-- 设备 6 -->
                     <div class="equip-card">
-                        <div class="equip-img" style="background-image: url('asset/equipment/Dressing\ Room\ .jpg');"></div>
+                        <div class="equip-img" style="background-image: url('asset/equipment/Tensile\ Testing\ Machine.jpg');"></div>
                         <div class="equip-info">
                             <h4>拉力测试仪器</h4>
                         </div>
@@ -1049,7 +1060,7 @@
         setTimeout(()=>{
         document.getElementById('msgPopup').style.display = 'block';
         localStorage.setItem('msgPopDay', today);
-        }, 3000);
+        }, 5000);
     }
     );
     // 关闭弹窗
