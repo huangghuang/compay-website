@@ -322,7 +322,7 @@
                 '新闻来源：行业媒体': 'News Source: Industry Media',
                 '知名品牌签署长期供货协议': 'Well-known brands sign long-term supply agreements',
                 '6天前': '6 days ago',
-                '新品发布：食品级厨房抹布系列': 'New Product Launch: Food-grade Kitchen Towels Series',
+                '新品发布：食品级厨房抹布系列': 'New Product Launch: Food-grade Kitchen Cloth Series',
                 '12天前': '12 days ago',
                 '参加行业高峰论坛并发表主题演讲': 'Participated in the industry summit forum and delivered a keynote speech',
                 '1个月前': '1 month ago',
