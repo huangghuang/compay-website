@@ -38,105 +38,10 @@
                     }
                 ],
     "pipe":  [
-                 {
-                     "name":  "“GOOD”单面印花BR960P-22（反）",
-                     "image":  "../asset/fabric patterns/pattern/GOODBR960P-22().jpg"
-                 },
-                 {
-                     "name":  "“GOOD”单面印花BR960P-22",
-                     "image":  "../asset/fabric patterns/pattern/GOODBR960P-22.jpg"
-                 },
-                 {
-                     "name":  "BR075P-10 淡粉色",
-                     "image":  "../asset/fabric patterns/pattern/BR075P-10.jpg"
-                 },
-                 {
-                     "name":  "BR075P-10 天蓝色",
-                     "image":  "../asset/fabric patterns/pattern/BR075P-10-1.jpg"
-                 },
-                 {
-                     "name":  "BR546P-10 草绿色",
-                     "image":  "../asset/fabric patterns/pattern/BR546P-10.jpg"
-                 },
-                 {
-                     "name":  "BR650P-22派对",
-                     "image":  "../asset/fabric patterns/pattern/BR650P-22.jpg"
-                 },
-                 {
-                     "name":  "BR678P-22 (2)",
-                     "image":  "../asset/fabric patterns/pattern/BR678P-22 (2).jpg"
-                 },
-                 {
-                     "name":  "BR678P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR678P-22.jpg"
-                 },
-                 {
-                     "name":  "BR763P-18 豆沙绿",
-                     "image":  "../asset/fabric patterns/pattern/BR763P-18.jpg"
-                 },
-                 {
-                     "name":  "BR763P-18草绿色",
-                     "image":  "../asset/fabric patterns/pattern/BR763P-18-1.jpg"
-                 },
-                 {
-                     "name":  "BT040P-10目方孔",
-                     "image":  "../asset/fabric patterns/pattern/BT040P-10.jpg"
-                 },
-                 {
-                     "name":  "BZ074S-40目",
-                     "image":  "../asset/fabric patterns/pattern/BZ074S-40.jpg"
-                 },
-                 {
-                     "name":  "GIBONE森林BR780P-10(反）",
-                     "image":  "../asset/fabric patterns/pattern/GIBONEBR780P-10().jpg"
-                 },
-                 {
-                     "name":  "GIBONE森林BR780P-10",
-                     "image":  "../asset/fabric patterns/pattern/GIBONEBR780P-10.jpg"
-                 },
-                 {
-                     "name":  "奥妙BR778P-22(反）",
-                     "image":  "../asset/fabric patterns/pattern/BR778P-22().jpg"
-                 },
-                 {
-                     "name":  "奥妙BR778P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR778P-22.jpg"
-                 },
-                 {
-                     "name":  "白手套",
-                     "image":  "../asset/fabric patterns/pattern/pattern-015.jpg"
-                 },
-                 {
-                     "name":  "北极熊BR550P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR550P-22.jpg"
-                 },
-                 {
-                     "name":  "波斯猫BR780P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR780P-22.jpg"
-                 },
-                 {
-                     "name":  "餐具",
-                     "image":  "../asset/fabric patterns/pattern/pattern-018.jpg"
-                 },
-                 {
-                     "name":  "餐具BR350P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR350P-22.jpg"
-                 },
+                
                  {
                      "name":  "粗波浪BR070P-22",
                      "image":  "../asset/fabric patterns/pattern/BR070P-22.jpg"
-                 },
-                 {
-                     "name":  "粗波浪BR765P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR765P-22.jpg"
-                 },
-                 {
-                     "name":  "粗波浪组合 (2)",
-                     "image":  "../asset/fabric patterns/pattern/(2).jpg"
-                 },
-                 {
-                     "name":  "粗波浪组合",
-                     "image":  "../asset/fabric patterns/pattern/pattern-023.jpg"
                  },
                  {
                      "name":  "粗直线纹BR050P-10",
@@ -151,47 +56,27 @@
                      "image":  "../asset/fabric patterns/pattern/CT050P.jpg"
                  },
                  {
-                     "name":  "大六菱型BR774P-22 (3)",
-                     "image":  "../asset/fabric patterns/pattern/BR774P-22-(3).jpg"
-                 },
-                 {
                      "name":  "大人字纹BR540P-22",
                      "image":  "../asset/fabric patterns/pattern/BR540P-22.jpg"
                  },
-                 {
-                     "name":  "大人字纹BR545P-10",
-                     "image":  "../asset/fabric patterns/pattern/BR545P-10.jpg"
+                {
+                     "name":  "小人字纹BR770P-22",
+                     "image":  "../asset/fabric patterns/pattern/BR770P-22.jpg"
+                 },
+                {
+                     "name":  "小花型纹BR080P-22",
+                     "image":  "../asset/fabric patterns/pattern/BR080P-22-1.jpg"
                  },
                  {
                      "name":  "大细波浪BR565P-22",
                      "image":  "../asset/fabric patterns/pattern/BR565P-22.jpg"
                  },
                  {
-                     "name":  "单线方格纹BR550P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR550P-22-1.jpg"
-                 },
-                 {
-                     "name":  "地图BR350P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR350P-22-1.jpg"
-                 },
-                 {
-                     "name":  "断波浪BR059P-10",
-                     "image":  "../asset/fabric patterns/pattern/BR059P-10.jpg"
-                 },
-                 {
-                     "name":  "对比图",
-                     "image":  "../asset/fabric patterns/pattern/pattern-034.jpg"
-                 },
-                 {
-                     "name":  "对比图所有",
-                     "image":  "../asset/fabric patterns/pattern/pattern-035.jpg"
-                 },
-                 {
                      "name":  "多线方格纹 BR082P-22",
                      "image":  "../asset/fabric patterns/pattern/BR082P-22.jpg"
                  },
                  {
-                     "name":  "多线细格纹BR774P-22 (4)",
+                     "name":  "多线细格纹BR774P-22 ",
                      "image":  "../asset/fabric patterns/pattern/BR774P-22-(4).jpg"
                  },
                  {
@@ -207,22 +92,6 @@
                      "image":  "../asset/fabric patterns/pattern/BR080P-22.jpg"
                  },
                  {
-                     "name":  "方块纹BR660P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR660P-22.jpg"
-                 },
-                 {
-                     "name":  "方块纹CR065P",
-                     "image":  "../asset/fabric patterns/pattern/CR065P.jpg"
-                 },
-                 {
-                     "name":  "瓜果BR650P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR650P-22-1.jpg"
-                 },
-                 {
-                     "name":  "罐头BR650P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR650P-22-2.jpg"
-                 },
-                 {
                      "name":  "横线方格BR380P-22",
                      "image":  "../asset/fabric patterns/pattern/BR380P-22.jpg"
                  },
@@ -231,108 +100,20 @@
                      "image":  "../asset/fabric patterns/pattern/CT060P.jpg"
                  },
                  {
-                     "name":  "皇冠BR090P-13",
-                     "image":  "../asset/fabric patterns/pattern/BR090P-13.jpg"
-                 },
-                 {
-                     "name":  "佳思可玲BR065P-18",
-                     "image":  "../asset/fabric patterns/pattern/BR065P-18.jpg"
-                 },
-                 {
-                     "name":  "家居用品BR960P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR960P-22.jpg"
-                 },
-                 {
-                     "name":  "脚丫CR060P",
-                     "image":  "../asset/fabric patterns/pattern/CR060P.jpg"
-                 },
-                 {
-                     "name":  "聚会必备BR350P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR350P-22-2.jpg"
-                 },
-                 {
-                     "name":  "咖啡杯具BR545P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR545P-22.jpg"
-                 },
-                 {
-                     "name":  "卡通老鼠BR080P-16",
-                     "image":  "../asset/fabric patterns/pattern/BR080P-16.jpg"
-                 },
-                 {
-                     "name":  "康洁BR760P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR760P-22.jpg"
-                 },
-                 {
-                     "name":  "老方格BR760P-22 (2)",
-                     "image":  "../asset/fabric patterns/pattern/BR760P-22-(2).jpg"
-                 },
-                 {
-                     "name":  "老方格BR760P-22 (3)",
+                     "name":  "老方格BR760P-22 ",
                      "image":  "../asset/fabric patterns/pattern/BR760P-22-(3).jpg"
-                 },
-                 {
-                     "name":  "老方格BR760P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR760P-22-1.jpg"
                  },
                  {
                      "name":  "菱形格纹BR540P-22",
                      "image":  "../asset/fabric patterns/pattern/BR540P-22-1.jpg"
                  },
                  {
-                     "name":  "菱形格组合",
-                     "image":  "../asset/fabric patterns/pattern/pattern-059.jpg"
-                 },
-                 {
-                     "name":  "梅花BR550P-22 (2)",
+                     "name":  "梅花BR550P-22 ",
                      "image":  "../asset/fabric patterns/pattern/BR550P-22-(2).jpg"
-                 },
-                 {
-                     "name":  "鸟CR060P",
-                     "image":  "../asset/fabric patterns/pattern/CR060P-1.jpg"
-                 },
-                 {
-                     "name":  "柠檬汽水BR6560P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR6560P-22.jpg"
-                 },
-                 {
-                     "name":  "片装组合",
-                     "image":  "../asset/fabric patterns/pattern/pattern-063.jpg"
-                 },
-                 {
-                     "name":  "青海波纹BR741P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR741P-22.jpg"
-                 },
-                 {
-                     "name":  "全涤沦",
-                     "image":  "../asset/fabric patterns/pattern/pattern-065.jpg"
-                 },
-                 {
-                     "name":  "燃CT060P（反）",
-                     "image":  "../asset/fabric patterns/pattern/CT060P().jpg"
-                 },
-                 {
-                     "name":  "燃CT060P",
-                     "image":  "../asset/fabric patterns/pattern/CT060P-1.jpg"
-                 },
-                 {
-                     "name":  "三脸笑BR960P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR960P-22-1.jpg"
-                 },
-                 {
-                     "name":  "十字星BR650P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR650P-22-3.jpg"
                  },
                  {
                      "name":  "树叶纹BR775P-22",
                      "image":  "../asset/fabric patterns/pattern/BR775P-22.jpg"
-                 },
-                 {
-                     "name":  "树枝丫BR547P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR547P-22.jpg"
-                 },
-                 {
-                     "name":  "苏纳可BR678P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR678P-22-1.jpg"
                  },
                  {
                      "name":  "特硬款BR695P10",
@@ -341,26 +122,6 @@
                  {
                      "name":  "田字格BR753P-25",
                      "image":  "../asset/fabric patterns/pattern/BR753P-25.jpg"
-                 },
-                 {
-                     "name":  "椭圆字母BR960P-22 (3)",
-                     "image":  "../asset/fabric patterns/pattern/BR960P-22-(3).jpg"
-                 },
-                 {
-                     "name":  "微信图片_20260522145046",
-                     "image":  "../asset/fabric patterns/pattern/_20260522145046.jpg"
-                 },
-                 {
-                     "name":  "微信图片_20260529145808",
-                     "image":  "../asset/fabric patterns/pattern/_20260529145808.jpg"
-                 },
-                 {
-                     "name":  "微信图片_20260529145907",
-                     "image":  "../asset/fabric patterns/pattern/_20260529145907.jpg"
-                 },
-                 {
-                     "name":  "细波浪BR085P-10 (2)",
-                     "image":  "../asset/fabric patterns/pattern/BR085P-10-(2).jpg"
                  },
                  {
                      "name":  "细波浪BR085P-10",
@@ -375,21 +136,10 @@
                      "image":  "../asset/fabric patterns/pattern/BR755P-22.jpg"
                  },
                  {
-                     "name":  "小花型纹BR080P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR080P-22-1.jpg"
-                 },
-                 {
                      "name":  "小六菱型BR774P-22",
                      "image":  "../asset/fabric patterns/pattern/BR774P-22.jpg"
                  },
-                 {
-                     "name":  "小猫头",
-                     "image":  "../asset/fabric patterns/pattern/pattern-085.jpg"
-                 },
-                 {
-                     "name":  "小人字纹BR770P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR770P-22.jpg"
-                 },
+               
                  {
                      "name":  "小细波浪BT038P-40",
                      "image":  "../asset/fabric patterns/pattern/BT038P-40.jpg"
@@ -399,80 +149,12 @@
                      "image":  "../asset/fabric patterns/pattern/BR766P-22.jpg"
                  },
                  {
-                     "name":  "小帐篷BR070P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR070P-22-1.jpg"
-                 },
-                 {
-                     "name":  "斜线BR765P-10",
-                     "image":  "../asset/fabric patterns/pattern/BR765P-10.jpg"
-                 },
-                 {
-                     "name":  "斜线纹BR774P-22 (2)",
-                     "image":  "../asset/fabric patterns/pattern/BR774P-22-(2).jpg"
-                 },
-                 {
-                     "name":  "心型CT070T",
-                     "image":  "../asset/fabric patterns/pattern/CT070T.jpg"
-                 },
-                 {
-                     "name":  "星星BR134P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR134P-22.jpg"
-                 },
-                 {
-                     "name":  "星星月亮BR960P-22 (2)",
-                     "image":  "../asset/fabric patterns/pattern/BR960P-22-(2).jpg"
-                 },
-                 {
-                     "name":  "洋葱 BR650P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR650P-22-5.jpg"
-                 },
-                 {
-                     "name":  "伊藤忠",
-                     "image":  "../asset/fabric patterns/pattern/pattern-096.jpg"
-                 },
-                 {
-                     "name":  "印章BR960P-22 (4)",
-                     "image":  "../asset/fabric patterns/pattern/BR960P-22-(4).jpg"
-                 },
-                 {
-                     "name":  "盈丰BR557P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR557P-22.jpg"
-                 },
-                 {
                      "name":  "圆点CR450P",
                      "image":  "../asset/fabric patterns/pattern/CR450P.jpg"
                  },
                  {
-                     "name":  "章鱼BR752P-10 ",
-                     "image":  "../asset/fabric patterns/pattern/BR752P-10.jpg"
-                 },
-                 {
-                     "name":  "植物BR073P-22 (2)",
-                     "image":  "../asset/fabric patterns/pattern/BR073P-22-(2).jpg"
-                 },
-                 {
-                     "name":  "植物BR073P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR073P-22.jpg"
-                 },
-                 {
-                     "name":  "植物图腾BR780P-10 (2)",
-                     "image":  "../asset/fabric patterns/pattern/BR780P-10-(2).jpg"
-                 },
-                 {
-                     "name":  "植物图腾BR780P-10",
-                     "image":  "../asset/fabric patterns/pattern/BR780P-10.jpg"
-                 },
-                 {
-                     "name":  "竹子BZ070P-18",
-                     "image":  "../asset/fabric patterns/pattern/BZ070P-18.jpg"
-                 },
-                 {
-                     "name":  "自家人",
-                     "image":  "../asset/fabric patterns/pattern/pattern-106.jpg"
-                 },
-                 {
-                     "name":  "字母花型BR960P-22",
-                     "image":  "../asset/fabric patterns/pattern/BR960P-22-2.jpg"
+                     "name":  "定制花纹",
+                     "image":  "../asset/fabric patterns/pattern/123.jpg"
                  }
              ]
 }
