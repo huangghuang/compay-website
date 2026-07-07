@@ -45,7 +45,7 @@
                 '了解更多': 'Learn More',
                 '>>了解更多': '>>Learn More',
                 '播放视频': 'Watch Video',
-                '山东锦腾弘达水刺无纺布': 'Shandong Jinteng Hongda Spunlace Nonwoven Co., Ltd.',
+                '山东锦腾弘达水刺无纺布有限责任公司': 'Shandong Jinteng Hongda Spunlace Nonwoven Co., Ltd.',
                 '专注高端差异化水刺非织造材料，服务美容护理、民用清洁、工业用材与医用材料四大领域。': 'Focusing on high-end differentiated spunlace nonwoven materials, serving beauty care, household cleaning, industrial materials and medical applications.',
                 '领先的绿色健康产业解决方案': 'Leading Green and Healthy Industry Solutions',
                 '20+ 年行业经验，覆盖全球市场': '20+ years of industry experience, covering global markets',
@@ -312,7 +312,12 @@
                 '（注：目前，在海关的商品编码中将清洁湿巾归入34011990，消毒湿巾归入38089400，但是这两个编码下不只是湿巾产品，还包括其他清洁、消毒产品。）': '(Note: Currently, in the customs commodity codes, cleaning wet wipes are classified under 34011990, while disinfectant wet wipes are classified under 38089400. However, these two codes include not only wet wipe products but also other cleaning and disinfectant products.)',
                 '← 行业资讯': '← Industry News',
                 '📞电话: +86 186 6325 1519': '📞Phone: +86 186 6325 1519',
-                '📫邮箱: info@nbond.cn': '📫Email: info@nbond.cn',
+                '📞电话: +86 153 7637 9988': '📞Phone: +86 153 7637 9988',
+                '📫邮箱: zhanghongwei@hongtuononwoven.com': '📫Email: zhanghongwei@hongtuononwoven.com',
+                '📫邮箱: jackfang@hongtuononwoven.com': '📫Email: jackfang@hongtuononwoven.com',
+                '186-6325-1519 (国内业务)': '186-6325-1519 (Domestic Business)',
+                '153-7637-9988 (国际业务)': '153-7637-9988 (International Business)',
+                '0086-0632-538788 (传真)': '0086-0632-538788 (Fax)',
                 '🏠地址: 山东省滕州市经济开发区恒源北路599号': '🏠Address: No. 599 Hengyuan North Road, Economic Development Zone, Tengzhou City, Shandong Province',
                 '锦腾弘达集团在第十届环保材料博览会上展示最新工艺': 'Jinteng Hongda Group showcases the latest technology at the 10th Environmental Protection Materials Expo',
                 '公司展示了以天然纤维为核心的新型水刺工艺，现场演示了可降解产品的制造流程，与多家品牌达成初步合作意向。': 'The company showcased a new spunlace process centered on natural fibers, demonstrating the manufacturing process of biodegradable products on-site and reaching preliminary cooperation intentions with several brands.',
@@ -328,8 +333,80 @@
                 '1个月前': '1 month ago',
                 '投资者互动日：电话会议回顾': 'Investor Interaction Day: Conference Call Review',
                 '2个月前': '2 months ago',
+                '专注高端差异化水刺非织造材料，服务美容护理、民用清洁、工业用材与医用材料四大领域。我们坚持绿色制造、技术创新与高品质交付。': 'Focusing on high-end differentiated spunlace nonwoven materials, serving four major areas: beauty care, household cleaning, industrial materials, and medical materials. We adhere to green manufacturing, technological innovation, and high-quality delivery.',
+                '粗波浪BR070P-22': 'Coarse Wave BR070P-22',
+                '粗直线纹BR050P-10': 'Coarse Straight Line Pattern BR050P-10',
+                '大波浪BR145P-22': 'Large Wave BR145P-22',
+                '大花CT050P': 'Large Flower CT050P',
+                '大人字纹BR540P-22': 'Large Herringbone Pattern BR540P-22',
+                '小人字纹BR770P-22': 'Small Herringbone Pattern BR770P-22',
+                '小花型纹BR080P-22': 'Small Flower Pattern BR080P-22',
+                '大细波浪BR565P-22': 'Large Fine Wave BR565P-22',
+                '多线方格纹 BR082P-22': 'Multi-line Checkered Pattern BR082P-22',
+                '多线细格纹BR774P-22': 'Multi-line Fine Checkered Pattern BR774P-22',
+                '方格BR458P-22': 'Checkered Pattern BR458P-22',
+                '方块BR070P-13': 'Square Pattern BR070P-13',
+                '方块BR080P-22': 'Square Pattern BR080P-22',
+                '横线方格BR380P-22': 'Horizontal Line Checkered Pattern BR380P-22',
+                '花型纹CT060P': 'Floral Pattern CT060P',
+                '老方格BR760P-22': 'Old Checkered Pattern BR760P-22',
+                '菱形格纹BR540P-22': 'Diamond Checkered Pattern BR540P-22',
+                '梅花BR550P-22': 'Plum Blossom Pattern BR550P-22',
+                '树叶纹BR775P-22': 'Leaf Pattern BR775P-22',
+                '特硬款BR695P10': 'Extra Hard BR695P10',
+                '田字格BR753P-25': 'Tian Zi Ge Pattern BR753P-25',
+                '细波浪BR085P-10': 'Fine Wave BR085P-10',
+                '小波浪纹BR650P-22': 'Small Wave Pattern BR650P-22',
+                '小方格纹BR755P-22': 'Small Checkered Pattern BR755P-22',
+                '小六菱型BR774P-22': 'Small Hexagonal Pattern BR774P-22',
+                '小细波浪BT038P-40': 'Small Fine Wave BT038P-40',
+                '小细波浪纹BR766P-22': 'Small Fine Wave Pattern BR766P-22',
+                '圆点CR450P': 'Round Dot CR450P',
+                '定制花纹': 'Custom Pattern',
+                '10目': '10 Mesh',
+                '13目方孔': '13 Mesh Square Hole',
+                '16目方孔': '16 Mesh Square Hole',
+                '16目圆孔': '16 Mesh Round Hole',
+                '18目': '18 Mesh',
+                '22目': '22 Mesh',
+                '25目': '25 Mesh',
+                '8目方孔': '8 Mesh Square Hole',
+                '8目圆孔': '8 Mesh Round Hole',
+                '3色片装抹布': '3-color pack cloth',
+                '袋装抹布粉色': 'Bagged cloth in pink',
+                '袋装五色组合': 'Bagged five-color combination',
+                '袋装粉色波浪': 'Bagged pink wave pattern',
+                '袋装薄手粉色白色': 'Bagged thin pink and white',
+                '盒装棕色': 'Boxed Brown',
+                '卷装3色组合': '3-color Roll Set',
+                '卷装四色组合': '4-color Roll Set',
+                '卷装五色组合': '5-color Roll Set',
+                '黄色脚印': 'Yellow footprint',
+                '浅蓝色点点': 'Light blue dots',
+                '深蓝色点点': 'Dark blue dots',
+                '白色手套': 'White gloves',
+                '组合装': 'Combination pack',
+                '蓝色磨砂抹布': 'Blue Scouring Cloth',
+                '蓝色磨砂抹布细节':' Details of Blue Scouring Cloth',
+                '蓝色磨砂抹布展开':'Unfolded Blue Scouring Cloth',
+                '磨砂抹布墨绿色':'Dark Green Scouring Cloth',
+                '磨砂抹布墨绿色展开细节':'Unfolded Details of Dark Green Scouring Cloth',
+                '墨绿色磨砂抹布细节':'Details of Dark Green Scouring Cloth',
+                '三层磨砂抹布黑白':'3-Layer Black & White Scouring Cloth',
+                '黄色磨砂抹布':'Yellow Scouring Cloth',
+                '卷装吸色片小尺寸组合':'Small Size Rolled Color Absorbing Sheet Set',
+                '吸色片袋装':'Bagged Color Absorbing Sheets',
+                '显净吸色片盒装':'Boxed Xianjing Color Absorbing Sheets',
+                '条纹':'Striped',
+                '空贴':'Blank Adhesive Patch',
+                '膏药贴':'Plaster Patch',
+                '彩色压缩大毛巾':'Colorful Compressed Large Towel',
+                '彩色压缩毛巾细节':'Details of Colorful Compressed Towel',
+                '压缩大毛巾':'Compressed Large Towel',
+                '压缩毛巾组合':'Compressed Towel Set',
+            
 
-                
+
             }
         };
 
@@ -337,6 +414,19 @@
             acc[en] = zh;
             return acc;
         }, {});
+
+        function getCurrentSiteLang() {
+            return localStorage.getItem('site_lang') || (document.documentElement.lang && document.documentElement.lang.startsWith('en') ? 'en' : 'zh');
+        }
+
+        function translateSiteText(text, lang = getCurrentSiteLang()) {
+            if (!text) return '';
+            const map = lang === 'en' ? translations.raw : rawReverse;
+            return (map && map[text]) || text;
+        }
+
+        window.translateSiteText = translateSiteText;
+        window.getCurrentSiteLang = getCurrentSiteLang;
 
         function translateAttr(selector, attr, lang) {
             document.querySelectorAll(selector).forEach(el => {
@@ -386,6 +476,7 @@
 
             document.documentElement.lang = (lang === 'zh' ? 'zh-CN' : 'en');
             localStorage.setItem('site_lang', lang);
+            window.dispatchEvent(new CustomEvent('site-lang-changed', { detail: { lang } }));
         }
 
         document.addEventListener('DOMContentLoaded', () => {

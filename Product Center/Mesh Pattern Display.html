@@ -331,9 +331,9 @@ nav { display: flex; justify-content: space-between; align-items: center; height
             <div>
                 <h4>联系我们</h4>
                 <a href="tel:+8618663251519">📞电话: +86 186 6325 1519</a>
-                <a href="tel:+8618663251519">📞电话: +86 186 6325 1519</a>
+                <a href="tel:+8618663251519">📞电话: +86 153 7637 9988</a>
                 <a href="mailto:zhanghongwei@hongtuononwoven.com">📫邮箱: zhanghongwei@hongtuononwoven.com</a>
-                <a href="mailto:zhanghongwei@hongtuononwoven.com">📫邮箱: zhanghongwei@hongtuononwoven.com</a>
+                <a href="mailto:jackfang@hongtuononwoven.com">📫邮箱: jackfang@hongtuononwoven.com</a>
                 <a href="#">🏠地址: 山东省滕州市经济开发区恒源北路599号</a>
             </div>
         </div>
@@ -345,11 +345,21 @@ nav { display: flex; justify-content: space-between; align-items: center; height
 const tabs = document.querySelectorAll('.category-tab');
 const equipmentGrid = document.querySelector('.equipment-grid');
 let equipmentData = null;
+let currentCategory = null;
+
+function getCurrentLanguage() {
+    return window.getCurrentSiteLang ? window.getCurrentSiteLang() : (localStorage.getItem('site_lang') || 'zh');
+}
+
+function t(text) {
+    if (!text) return '';
+    return window.translateSiteText ? window.translateSiteText(text, getCurrentLanguage()) : text;
+}
 
 function renderEquipment(category, page = 1) {
     const list = equipmentData && equipmentData[category];
     if (!list || list.length === 0) {
-        equipmentGrid.innerHTML = '<div class="equipment-card"><div class="equipment-img">暂无设备</div><div class="equipment-name">当前分类暂无设备信息。</div></div>';
+        equipmentGrid.innerHTML = `<div class="equipment-card"><div class="equipment-img">${t('暂无设备')}</div><div class="equipment-name">${t('当前分类暂无设备信息。')}</div></div>`;
         pagination.innerHTML = '';
         return;
     }
@@ -358,12 +368,15 @@ function renderEquipment(category, page = 1) {
     const startIndex = (page - 1) * ITEMS_PER_PAGE;
     const pageData = list.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
-    equipmentGrid.innerHTML = pageData.map(item => `
-        <div class="equipment-card">
-            <div class="equipment-img">${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;"/>` : '[设备图片]'}</div>
-            <div class="equipment-name">${item.name}</div>
-        </div>
-    `).join('');
+    equipmentGrid.innerHTML = pageData.map(item => {
+        const displayName = t(item.name);
+        return `
+            <div class="equipment-card">
+                <div class="equipment-img">${item.image ? `<img src="${item.image}" alt="${displayName}" style="width:100%;height:100%;object-fit:cover;"/>` : '[设备图片]'}</div>
+                <div class="equipment-name">${displayName}</div>
+            </div>
+        `;
+    }).join('');
 
     renderPagination(totalPages);
 }
@@ -398,8 +411,9 @@ function renderPagination(totalPages) {
 }
 
 function loadEquipment(category, page = 1) {
+    currentCategory = category;
     currentPage = page;
-    equipmentGrid.innerHTML = '<div class="equipment-card"><div class="equipment-img">加载中…</div><div class="equipment-name">请稍候</div></div>';
+    equipmentGrid.innerHTML = `<div class="equipment-card"><div class="equipment-img">${t('加载中…')}</div><div class="equipment-name">${t('请稍候')}</div></div>`;
 
     if (equipmentData) {
         renderEquipment(category, currentPage);
@@ -413,9 +427,15 @@ function loadEquipment(category, page = 1) {
             renderEquipment(category, currentPage);
         })
         .catch(() => {
-            equipmentGrid.innerHTML = '<div class="equipment-card"><div class="equipment-img">加载失败</div><div class="equipment-name">请刷新页面或检查数据文件。</div></div>';
+            equipmentGrid.innerHTML = `<div class="equipment-card"><div class="equipment-img">${t('加载失败')}</div><div class="equipment-name">${t('请刷新页面或检查数据文件。')}</div></div>`;
         });
 }
+
+window.addEventListener('site-lang-changed', () => {
+    if (equipmentData) {
+        renderEquipment(document.querySelector('.category-tab.active')?.dataset.category || currentCategory, currentPage);
+    }
+});
 
 tabs.forEach(tab => {
     tab.addEventListener('click', function() {

@@ -325,7 +325,7 @@ nav { display: flex; justify-content: space-between; align-items: center; height
      <footer id="contact" class="footer">
         <div class="container footer-inner">
             <div>
-                <h4>山东锦腾弘达水刺无纺布</h4>
+                <h4>山东锦腾弘达水刺无纺布有限责任公司</h4>
                 <p>专注高端差异化水刺非织造材料，服务美容护理、民用清洁、工业用材与医用材料四大领域。</p>
             </div>
             <div>
@@ -340,9 +340,9 @@ nav { display: flex; justify-content: space-between; align-items: center; height
             <div>
                 <h4>联系我们</h4>
                 <a href="tel:+8618663251519">📞电话: +86 186 6325 1519</a>
-                <a href="tel:+8618663251519">📞电话: +86 186 6325 1519</a>
+                <a href="tel:+8618663251519">📞电话: +86 153 7637 9988</a>
                 <a href="mailto:zhanghongwei@hongtuononwoven.com">📫邮箱: zhanghongwei@hongtuononwoven.com</a>
-                <a href="mailto:zhanghongwei@hongtuononwoven.com">📫邮箱: zhanghongwei@hongtuononwoven.com</a>
+                <a href="mailto:jackfang@hongtuononwoven.com">📫邮箱: jackfang@hongtuononwoven.com</a>
                 <a href="#">🏠地址: 山东省滕州市经济开发区恒源北路599号</a>
             </div>
         </div>
@@ -359,10 +359,19 @@ let productData = null;
 let currentCategory = 'plastic-pullet';
 let currentPage = 1;
 
+function getCurrentLanguage() {
+    return window.getCurrentSiteLang ? window.getCurrentSiteLang() : (localStorage.getItem('site_lang') || 'zh');
+}
+
+function t(text) {
+    if (!text) return '';
+    return window.translateSiteText ? window.translateSiteText(text, getCurrentLanguage()) : text;
+}
+
 function renderProducts(category, page = 1) {
     const list = productData && productData[category];
     if (!list || list.length === 0) {
-        productGrid.innerHTML = '<div class="product-card"><div class="product-img">暂无产品</div><div class="product-info"><h3>暂无内容</h3><p>当前分类暂无产品信息。</p></div></div>';
+        productGrid.innerHTML = `<div class="product-card"><div class="product-img">${t('暂无产品')}</div><div class="product-info"><h3>${t('暂无内容')}</h3><p>${t('当前分类暂无产品信息。')}</p></div></div>`;
         pagination.innerHTML = '';
         return;
     }
@@ -372,16 +381,19 @@ function renderProducts(category, page = 1) {
     const startIndex = (page - 1) * ITEMS_PER_PAGE;
     const pageItems = list.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
-    productGrid.innerHTML = pageItems.map(item => `
-        <div class="product-card">
-            <div class="product-img">${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;"/>` : '[产品图片]'}</div>
-            <div class="product-info">
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-                <a class="view-more" href="#">VIEW MORE</a>
+    productGrid.innerHTML = pageItems.map(item => {
+        const displayName = t(item.name);
+        return `
+            <div class="product-card">
+                <div class="product-img">${item.image ? `<img src="${item.image}" alt="${displayName}" style="width:100%;height:100%;object-fit:cover;"/>` : '[产品图片]'}</div>
+                <div class="product-info">
+                    <h3>${displayName}</h3>
+                    <p>${item.description}</p>
+                    <a class="view-more" href="#">VIEW MORE</a>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 
     renderPagination(totalPages);
 }
@@ -409,7 +421,7 @@ function renderPagination(totalPages) {
 
 function loadProducts(category, page = 1) {
     currentCategory = category;
-    productGrid.innerHTML = '<div class="product-card"><div class="product-img">加载中…</div><div class="product-info"><h3>请稍候</h3><p>正在加载产品信息。</p></div></div>';
+    productGrid.innerHTML = `<div class="product-card"><div class="product-img">${t('加载中…')}</div><div class="product-info"><h3>${t('请稍候')}</h3><p>${t('正在加载产品信息。')}</p></div></div>`;
 
     if (productData) {
         renderProducts(category, page);
@@ -423,9 +435,15 @@ function loadProducts(category, page = 1) {
             renderProducts(category, page);
         })
         .catch(() => {
-            productGrid.innerHTML = '<div class="product-card"><div class="product-img">加载失败</div><div class="product-info"><h3>读取失败</h3><p>无法加载产品数据，请刷新页面。</p></div></div>';
+            productGrid.innerHTML = `<div class="product-card"><div class="product-img">${t('加载失败')}</div><div class="product-info"><h3>${t('读取失败')}</h3><p>${t('无法加载产品数据，请刷新页面。')}</p></div></div>`;
         });
 }
+
+window.addEventListener('site-lang-changed', () => {
+    if (productData) {
+        renderProducts(currentCategory, currentPage);
+    }
+});
 
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
