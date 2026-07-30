@@ -170,7 +170,7 @@
                 '请输入您的手机号码': 'Please enter your phone number',
                 '请简单描述您需要的产品克重、幅宽或用途...': 'Please briefly describe the product weight, width, or intended use...',
                 '提交留言': 'Submit Message',
-                '山东省枣庄市滕州市经济开发区恒源北路599号山东锦腾弘达集团': 'No. 599 Hengyuan North Road, Economic Development Zone, Tengzhou City, Zaozhuang City, Shandong Province',
+                '山东省枣庄市滕州市经济开发区恒源北路588号山东锦腾弘达集团': 'No. 588 Hengyuan North Road, Economic Development Zone, Tengzhou City, Zaozhuang City, Shandong Province',
                 '周一至周六：8:00 - 18:00': 'Monday to Saturday: 8:00 - 18:00',
                 '产品优势': 'Product Advantages',
                 '产品名称': 'Product Name',
@@ -311,14 +311,14 @@
                 '2026年第一季度，湿巾进口量很少，仅5,670.88t，进口金额3,694.94万美元。进口湿巾产品主要为消毒湿巾，占总进口量的90.79%。': 'In the first quarter of 2026, the import volume of wet wipes was very small, only 5,670.88 tons, with an import value of $36.9494 million. The imported wet wipe products were mainly disinfectant wet wipes, accounting for 90.79% of total imports.',
                 '（注：目前，在海关的商品编码中将清洁湿巾归入34011990，消毒湿巾归入38089400，但是这两个编码下不只是湿巾产品，还包括其他清洁、消毒产品。）': '(Note: Currently, in the customs commodity codes, cleaning wet wipes are classified under 34011990, while disinfectant wet wipes are classified under 38089400. However, these two codes include not only wet wipe products but also other cleaning and disinfectant products.)',
                 '← 行业资讯': '← Industry News',
-                '📞电话: +86 186 6325 1519': '📞Phone: +86 186 6325 1519',
-                '📞电话: +86 153 7637 9988': '📞Phone: +86 153 7637 9988',
-                '📫邮箱: zhanghongwei@hongtuononwoven.com': '📫Email: zhanghongwei@hongtuononwoven.com',
-                '📫邮箱: jackfang@hongtuononwoven.com': '📫Email: jackfang@hongtuononwoven.com',
+                '📞国内业务: +86 186 6325 1519': '📞Domestic Business: +86 186 6325 1519',
+                '📞国际业务: +86 153 7637 9988': '📞PInternational Business: +86 153 7637 9988',
+                '📫国内业务邮箱: zhanghongwei@hongtuononwoven.com': '📫Domestic BusinessEmail: zhanghongwei@hongtuononwoven.com',
+                '📫国际业务邮箱: jackfang@hongtuononwoven.com': '📫International BusinessEmail: jackfang@hongtuononwoven.com',
                 '186-6325-1519 (国内业务)': '186-6325-1519 (Domestic Business)',
                 '153-7637-9988 (国际业务)': '153-7637-9988 (International Business)',
                 '0086-0632-538788 (传真)': '0086-0632-538788 (Fax)',
-                '🏠地址: 山东省滕州市经济开发区恒源北路599号': '🏠Address: No. 599 Hengyuan North Road, Economic Development Zone, Tengzhou City, Shandong Province',
+                '🏠地址: 山东省滕州市经济开发区恒源北路588号': '🏠Address: No. 588 Hengyuan North Road, Economic Development Zone, Tengzhou City, Shandong Province',
                 '锦腾弘达集团在第十届环保材料博览会上展示最新工艺': 'Jinteng Hongda Group showcases the latest technology at the 10th Environmental Protection Materials Expo',
                 '公司展示了以天然纤维为核心的新型水刺工艺，现场演示了可降解产品的制造流程，与多家品牌达成初步合作意向。': 'The company showcased a new spunlace process centered on natural fibers, demonstrating the manufacturing process of biodegradable products on-site and reaching preliminary cooperation intentions with several brands.',
                 '新闻来源：公司公告': 'News Source: Company Announcement',
@@ -458,6 +458,18 @@
             }
         }
 
+        function updateHeroSlideImages(lang) {
+            document.querySelectorAll('.hero-slider .swiper-slide .slide-bg').forEach(el => {
+                const image = lang === 'en'
+                    ? el.getAttribute('data-hero-image-en')
+                    : el.getAttribute('data-hero-image-zh');
+
+                if (image) {
+                    el.style.backgroundImage = `url('${image}')`;
+                }
+            });
+        }
+
         function translatePage(lang) {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -473,6 +485,7 @@
             translateAttr('[data-i18n-alt]', 'data-i18n-alt', lang);
             translateAttr('[data-i18n-value]', 'data-i18n-value', lang);
             translateRawTextNodes(document.body, lang);
+            updateHeroSlideImages(lang);
 
             document.documentElement.lang = (lang === 'zh' ? 'zh-CN' : 'en');
             localStorage.setItem('site_lang', lang);

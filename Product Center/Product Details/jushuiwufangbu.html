@@ -156,15 +156,22 @@
             gap: 30px;
             align-items: center;
         }
-        .detail-text {
+      .detail-text {
             flex: 1;
         }
-        .detail-image {
+       .detail-image {
             flex: 1;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 6px;
         }
         .detail-image img {
             width: 100%;
-            border-radius: 6px;
+            height: 100%;
+            object-fit: cover;
+            /* 图片居中 */
+            object-position: center;
         }
 
         /* --- 底部导航 --- */
