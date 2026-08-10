@@ -5,6 +5,10 @@
                         "image":  "../asset/fabric patterns/hole pattern/10mesh.jpg"
                     },
                     {
+                        "name":  "10目方孔",
+                        "image":  "../asset/fabric patterns/hole pattern/10.jpg"
+                    },
+                    {
                         "name":  "13目方孔",
                         "image":  "../asset/fabric patterns/hole pattern/13mesh square hole.jpg"
                     },
@@ -35,6 +39,10 @@
                     {
                         "name":  "8目圆孔",
                         "image":  "../asset/fabric patterns/hole pattern/8 mesh round hole.jpg"
+                    },
+                    {
+                        "name":  "8目方圆孔",
+                        "image":  "../asset/fabric patterns/hole pattern/8.jpg"
                     }
                 ],
     "pipe":  [
